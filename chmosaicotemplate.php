@@ -1,15 +1,15 @@
 <?php
 
-require_once 'chmosaicotempate.civix.php';
-use CRM_Chmosaicotempate_ExtensionUtil as E;
+require_once 'chmosaicotemplate.civix.php';
+use CRM_Chmosaicotemplate_ExtensionUtil as E;
 
 /**
  * Implements hook_civicrm_config().
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_config/ 
  */
-function chmosaicotempate_civicrm_config(&$config) {
-  _chmosaicotempate_civix_civicrm_config($config);
+function chmosaicotemplate_civicrm_config(&$config) {
+  _chmosaicotemplate_civix_civicrm_config($config);
 }
 
 /**
@@ -17,8 +17,8 @@ function chmosaicotempate_civicrm_config(&$config) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_xmlMenu
  */
-function chmosaicotempate_civicrm_xmlMenu(&$files) {
-  _chmosaicotempate_civix_civicrm_xmlMenu($files);
+function chmosaicotemplate_civicrm_xmlMenu(&$files) {
+  _chmosaicotemplate_civix_civicrm_xmlMenu($files);
 }
 
 /**
@@ -26,8 +26,8 @@ function chmosaicotempate_civicrm_xmlMenu(&$files) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_install
  */
-function chmosaicotempate_civicrm_install() {
-  _chmosaicotempate_civix_civicrm_install();
+function chmosaicotemplate_civicrm_install() {
+  _chmosaicotemplate_civix_civicrm_install();
 }
 
 /**
@@ -35,8 +35,8 @@ function chmosaicotempate_civicrm_install() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postInstall
  */
-function chmosaicotempate_civicrm_postInstall() {
-  _chmosaicotempate_civix_civicrm_postInstall();
+function chmosaicotemplate_civicrm_postInstall() {
+  _chmosaicotemplate_civix_civicrm_postInstall();
 }
 
 /**
@@ -44,8 +44,8 @@ function chmosaicotempate_civicrm_postInstall() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_uninstall
  */
-function chmosaicotempate_civicrm_uninstall() {
-  _chmosaicotempate_civix_civicrm_uninstall();
+function chmosaicotemplate_civicrm_uninstall() {
+  _chmosaicotemplate_civix_civicrm_uninstall();
 }
 
 /**
@@ -53,8 +53,8 @@ function chmosaicotempate_civicrm_uninstall() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_enable
  */
-function chmosaicotempate_civicrm_enable() {
-  _chmosaicotempate_civix_civicrm_enable();
+function chmosaicotemplate_civicrm_enable() {
+  _chmosaicotemplate_civix_civicrm_enable();
 }
 
 /**
@@ -62,8 +62,8 @@ function chmosaicotempate_civicrm_enable() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_disable
  */
-function chmosaicotempate_civicrm_disable() {
-  _chmosaicotempate_civix_civicrm_disable();
+function chmosaicotemplate_civicrm_disable() {
+  _chmosaicotemplate_civix_civicrm_disable();
 }
 
 /**
@@ -71,8 +71,8 @@ function chmosaicotempate_civicrm_disable() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_upgrade
  */
-function chmosaicotempate_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  return _chmosaicotempate_civix_civicrm_upgrade($op, $queue);
+function chmosaicotemplate_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  return _chmosaicotemplate_civix_civicrm_upgrade($op, $queue);
 }
 
 /**
@@ -83,8 +83,8 @@ function chmosaicotempate_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_managed
  */
-function chmosaicotempate_civicrm_managed(&$entities) {
-  _chmosaicotempate_civix_civicrm_managed($entities);
+function chmosaicotemplate_civicrm_managed(&$entities) {
+  _chmosaicotemplate_civix_civicrm_managed($entities);
 }
 
 /**
@@ -96,8 +96,8 @@ function chmosaicotempate_civicrm_managed(&$entities) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_caseTypes
  */
-function chmosaicotempate_civicrm_caseTypes(&$caseTypes) {
-  _chmosaicotempate_civix_civicrm_caseTypes($caseTypes);
+function chmosaicotemplate_civicrm_caseTypes(&$caseTypes) {
+  _chmosaicotemplate_civix_civicrm_caseTypes($caseTypes);
 }
 
 /**
@@ -110,8 +110,8 @@ function chmosaicotempate_civicrm_caseTypes(&$caseTypes) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_angularModules
  */
-function chmosaicotempate_civicrm_angularModules(&$angularModules) {
-  _chmosaicotempate_civix_civicrm_angularModules($angularModules);
+function chmosaicotemplate_civicrm_angularModules(&$angularModules) {
+  _chmosaicotemplate_civix_civicrm_angularModules($angularModules);
 }
 
 /**
@@ -119,8 +119,8 @@ function chmosaicotempate_civicrm_angularModules(&$angularModules) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_alterSettingsFolders
  */
-function chmosaicotempate_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
-  _chmosaicotempate_civix_civicrm_alterSettingsFolders($metaDataFolders);
+function chmosaicotemplate_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
+  _chmosaicotemplate_civix_civicrm_alterSettingsFolders($metaDataFolders);
 }
 
 /**
@@ -130,15 +130,15 @@ function chmosaicotempate_civicrm_alterSettingsFolders(&$metaDataFolders = NULL)
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_entityTypes
  */
-function chmosaicotempate_civicrm_entityTypes(&$entityTypes) {
-  _chmosaicotempate_civix_civicrm_entityTypes($entityTypes);
+function chmosaicotemplate_civicrm_entityTypes(&$entityTypes) {
+  _chmosaicotemplate_civix_civicrm_entityTypes($entityTypes);
 }
 
 /**
  * Implements hook_civicrm_thems().
  */
-function chmosaicotempate_civicrm_themes(&$themes) {
-  _chmosaicotempate_civix_civicrm_themes($themes);
+function chmosaicotemplate_civicrm_themes(&$themes) {
+  _chmosaicotemplate_civix_civicrm_themes($themes);
 }
 
 /**
@@ -146,10 +146,10 @@ function chmosaicotempate_civicrm_themes(&$themes) {
  *
  * @link https://github.com/veda-consulting/uk.co.vedaconsulting.mosaico/blob/2.x/API.md
  */
-function chmosaicotempate_civicrm_mosaicoBaseTemplates(&$templates) {
+function chmosaicotemplate_civicrm_mosaicoBaseTemplates(&$templates) {
   $templates['chtemplate'] = array(
     'name' => 'chtemplate',
-    'title' => 'Mosaico Agora',
+    'title' => 'Canada Helps template',
     'path' => E::url('chtemplate/chtemplate.html'),
     'thumbnail' => E::url('chtemplate/edres/_full.png'),
   );
@@ -162,7 +162,7 @@ function chmosaicotempate_civicrm_mosaicoBaseTemplates(&$templates) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_preProcess
  *
-function chmosaicotempate_civicrm_preProcess($formName, &$form) {
+function chmosaicotemplate_civicrm_preProcess($formName, &$form) {
 
 } // */
 
@@ -171,8 +171,8 @@ function chmosaicotempate_civicrm_preProcess($formName, &$form) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_navigationMenu
  *
-function chmosaicotempate_civicrm_navigationMenu(&$menu) {
-  _chmosaicotempate_civix_insert_navigation_menu($menu, 'Mailings', array(
+function chmosaicotemplate_civicrm_navigationMenu(&$menu) {
+  _chmosaicotemplate_civix_insert_navigation_menu($menu, 'Mailings', array(
     'label' => E::ts('New subliminal message'),
     'name' => 'mailing_subliminal_message',
     'url' => 'civicrm/mailing/subliminal',
@@ -180,5 +180,5 @@ function chmosaicotempate_civicrm_navigationMenu(&$menu) {
     'operator' => 'OR',
     'separator' => 0,
   ));
-  _chmosaicotempate_civix_navigationMenu($menu);
+  _chmosaicotemplate_civix_navigationMenu($menu);
 } // */

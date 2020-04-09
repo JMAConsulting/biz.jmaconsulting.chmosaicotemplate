@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<extension key="biz.jmaconsulting.chmosaicotempate" type="module">
-  <file>chmosaicotempate</file>
+<extension key="biz.jmaconsulting.chmosaicotemplate" type="module">
+  <file>chmosaicotemplate</file>
   <name>FIXME</name>
   <description>FIXME</description>
   <license>AGPL-3.0</license>
@@ -25,6 +25,6 @@
     <psr4 prefix="Civi\" path="Civi"/>
   </classloader>
   <civix>
-    <namespace>CRM/Chmosaicotempate</namespace>
+    <namespace>CRM/Chmosaicotemplate</namespace>
   </civix>
 </extension>

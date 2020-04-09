@@ -6,10 +6,10 @@
  * The ExtensionUtil class provides small stubs for accessing resources of this
  * extension.
  */
-class CRM_Chmosaicotempate_ExtensionUtil {
-  const SHORT_NAME = "chmosaicotempate";
-  const LONG_NAME = "biz.jmaconsulting.chmosaicotempate";
-  const CLASS_PREFIX = "CRM_Chmosaicotempate";
+class CRM_Chmosaicotemplate_ExtensionUtil {
+  const SHORT_NAME = "chmosaicotemplate";
+  const LONG_NAME = "biz.jmaconsulting.chmosaicotemplate";
+  const CLASS_PREFIX = "CRM_Chmosaicotemplate";
 
   /**
    * Translate a string using the extension's domain.
@@ -77,14 +77,14 @@ class CRM_Chmosaicotempate_ExtensionUtil {
 
 }
 
-use CRM_Chmosaicotempate_ExtensionUtil as E;
+use CRM_Chmosaicotemplate_ExtensionUtil as E;
 
 /**
  * (Delegated) Implements hook_civicrm_config().
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_config
  */
-function _chmosaicotempate_civix_civicrm_config(&$config = NULL) {
+function _chmosaicotemplate_civix_civicrm_config(&$config = NULL) {
   static $configured = FALSE;
   if ($configured) {
     return;
@@ -114,8 +114,8 @@ function _chmosaicotempate_civix_civicrm_config(&$config = NULL) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_xmlMenu
  */
-function _chmosaicotempate_civix_civicrm_xmlMenu(&$files) {
-  foreach (_chmosaicotempate_civix_glob(__DIR__ . '/xml/Menu/*.xml') as $file) {
+function _chmosaicotemplate_civix_civicrm_xmlMenu(&$files) {
+  foreach (_chmosaicotemplate_civix_glob(__DIR__ . '/xml/Menu/*.xml') as $file) {
     $files[] = $file;
   }
 }
@@ -125,9 +125,9 @@ function _chmosaicotempate_civix_civicrm_xmlMenu(&$files) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_install
  */
-function _chmosaicotempate_civix_civicrm_install() {
-  _chmosaicotempate_civix_civicrm_config();
-  if ($upgrader = _chmosaicotempate_civix_upgrader()) {
+function _chmosaicotemplate_civix_civicrm_install() {
+  _chmosaicotemplate_civix_civicrm_config();
+  if ($upgrader = _chmosaicotemplate_civix_upgrader()) {
     $upgrader->onInstall();
   }
 }
@@ -137,9 +137,9 @@ function _chmosaicotempate_civix_civicrm_install() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postInstall
  */
-function _chmosaicotempate_civix_civicrm_postInstall() {
-  _chmosaicotempate_civix_civicrm_config();
-  if ($upgrader = _chmosaicotempate_civix_upgrader()) {
+function _chmosaicotemplate_civix_civicrm_postInstall() {
+  _chmosaicotemplate_civix_civicrm_config();
+  if ($upgrader = _chmosaicotemplate_civix_upgrader()) {
     if (is_callable([$upgrader, 'onPostInstall'])) {
       $upgrader->onPostInstall();
     }
@@ -151,9 +151,9 @@ function _chmosaicotempate_civix_civicrm_postInstall() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_uninstall
  */
-function _chmosaicotempate_civix_civicrm_uninstall() {
-  _chmosaicotempate_civix_civicrm_config();
-  if ($upgrader = _chmosaicotempate_civix_upgrader()) {
+function _chmosaicotemplate_civix_civicrm_uninstall() {
+  _chmosaicotemplate_civix_civicrm_config();
+  if ($upgrader = _chmosaicotemplate_civix_upgrader()) {
     $upgrader->onUninstall();
   }
 }
@@ -163,9 +163,9 @@ function _chmosaicotempate_civix_civicrm_uninstall() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_enable
  */
-function _chmosaicotempate_civix_civicrm_enable() {
-  _chmosaicotempate_civix_civicrm_config();
-  if ($upgrader = _chmosaicotempate_civix_upgrader()) {
+function _chmosaicotemplate_civix_civicrm_enable() {
+  _chmosaicotemplate_civix_civicrm_config();
+  if ($upgrader = _chmosaicotemplate_civix_upgrader()) {
     if (is_callable([$upgrader, 'onEnable'])) {
       $upgrader->onEnable();
     }
@@ -178,9 +178,9 @@ function _chmosaicotempate_civix_civicrm_enable() {
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_disable
  * @return mixed
  */
-function _chmosaicotempate_civix_civicrm_disable() {
-  _chmosaicotempate_civix_civicrm_config();
-  if ($upgrader = _chmosaicotempate_civix_upgrader()) {
+function _chmosaicotemplate_civix_civicrm_disable() {
+  _chmosaicotemplate_civix_civicrm_config();
+  if ($upgrader = _chmosaicotemplate_civix_upgrader()) {
     if (is_callable([$upgrader, 'onDisable'])) {
       $upgrader->onDisable();
     }
@@ -198,21 +198,21 @@ function _chmosaicotempate_civix_civicrm_disable() {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_upgrade
  */
-function _chmosaicotempate_civix_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  if ($upgrader = _chmosaicotempate_civix_upgrader()) {
+function _chmosaicotemplate_civix_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  if ($upgrader = _chmosaicotemplate_civix_upgrader()) {
     return $upgrader->onUpgrade($op, $queue);
   }
 }
 
 /**
- * @return CRM_Chmosaicotempate_Upgrader
+ * @return CRM_Chmosaicotemplate_Upgrader
  */
-function _chmosaicotempate_civix_upgrader() {
-  if (!file_exists(__DIR__ . '/CRM/Chmosaicotempate/Upgrader.php')) {
+function _chmosaicotemplate_civix_upgrader() {
+  if (!file_exists(__DIR__ . '/CRM/Chmosaicotemplate/Upgrader.php')) {
     return NULL;
   }
   else {
-    return CRM_Chmosaicotempate_Upgrader_Base::instance();
+    return CRM_Chmosaicotemplate_Upgrader_Base::instance();
   }
 }
 
@@ -227,7 +227,7 @@ function _chmosaicotempate_civix_upgrader() {
  *
  * @return array(string)
  */
-function _chmosaicotempate_civix_find_files($dir, $pattern) {
+function _chmosaicotemplate_civix_find_files($dir, $pattern) {
   if (is_callable(['CRM_Utils_File', 'findFiles'])) {
     return CRM_Utils_File::findFiles($dir, $pattern);
   }
@@ -236,7 +236,7 @@ function _chmosaicotempate_civix_find_files($dir, $pattern) {
   $result = [];
   while (!empty($todos)) {
     $subdir = array_shift($todos);
-    foreach (_chmosaicotempate_civix_glob("$subdir/$pattern") as $match) {
+    foreach (_chmosaicotemplate_civix_glob("$subdir/$pattern") as $match) {
       if (!is_dir($match)) {
         $result[] = $match;
       }
@@ -262,8 +262,8 @@ function _chmosaicotempate_civix_find_files($dir, $pattern) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_managed
  */
-function _chmosaicotempate_civix_civicrm_managed(&$entities) {
-  $mgdFiles = _chmosaicotempate_civix_find_files(__DIR__, '*.mgd.php');
+function _chmosaicotemplate_civix_civicrm_managed(&$entities) {
+  $mgdFiles = _chmosaicotemplate_civix_find_files(__DIR__, '*.mgd.php');
   sort($mgdFiles);
   foreach ($mgdFiles as $file) {
     $es = include $file;
@@ -288,12 +288,12 @@ function _chmosaicotempate_civix_civicrm_managed(&$entities) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_caseTypes
  */
-function _chmosaicotempate_civix_civicrm_caseTypes(&$caseTypes) {
+function _chmosaicotemplate_civix_civicrm_caseTypes(&$caseTypes) {
   if (!is_dir(__DIR__ . '/xml/case')) {
     return;
   }
 
-  foreach (_chmosaicotempate_civix_glob(__DIR__ . '/xml/case/*.xml') as $file) {
+  foreach (_chmosaicotemplate_civix_glob(__DIR__ . '/xml/case/*.xml') as $file) {
     $name = preg_replace('/\.xml$/', '', basename($file));
     if ($name != CRM_Case_XMLProcessor::mungeCaseType($name)) {
       $errorMessage = sprintf("Case-type file name is malformed (%s vs %s)", $name, CRM_Case_XMLProcessor::mungeCaseType($name));
@@ -316,12 +316,12 @@ function _chmosaicotempate_civix_civicrm_caseTypes(&$caseTypes) {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_angularModules
  */
-function _chmosaicotempate_civix_civicrm_angularModules(&$angularModules) {
+function _chmosaicotemplate_civix_civicrm_angularModules(&$angularModules) {
   if (!is_dir(__DIR__ . '/ang')) {
     return;
   }
 
-  $files = _chmosaicotempate_civix_glob(__DIR__ . '/ang/*.ang.php');
+  $files = _chmosaicotemplate_civix_glob(__DIR__ . '/ang/*.ang.php');
   foreach ($files as $file) {
     $name = preg_replace(':\.ang\.php$:', '', basename($file));
     $module = include $file;
@@ -337,8 +337,8 @@ function _chmosaicotempate_civix_civicrm_angularModules(&$angularModules) {
  *
  * Find any and return any files matching "*.theme.php"
  */
-function _chmosaicotempate_civix_civicrm_themes(&$themes) {
-  $files = _chmosaicotempate_civix_glob(__DIR__ . '/*.theme.php');
+function _chmosaicotemplate_civix_civicrm_themes(&$themes) {
+  $files = _chmosaicotemplate_civix_glob(__DIR__ . '/*.theme.php');
   foreach ($files as $file) {
     $themeMeta = include $file;
     if (empty($themeMeta['name'])) {
@@ -364,7 +364,7 @@ function _chmosaicotempate_civix_civicrm_themes(&$themes) {
  *
  * @return array, possibly empty
  */
-function _chmosaicotempate_civix_glob($pattern) {
+function _chmosaicotemplate_civix_glob($pattern) {
   $result = glob($pattern);
   return is_array($result) ? $result : [];
 }
@@ -380,7 +380,7 @@ function _chmosaicotempate_civix_glob($pattern) {
  *
  * @return bool
  */
-function _chmosaicotempate_civix_insert_navigation_menu(&$menu, $path, $item) {
+function _chmosaicotemplate_civix_insert_navigation_menu(&$menu, $path, $item) {
   // If we are done going down the path, insert menu
   if (empty($path)) {
     $menu[] = [
@@ -401,7 +401,7 @@ function _chmosaicotempate_civix_insert_navigation_menu(&$menu, $path, $item) {
         if (!isset($entry['child'])) {
           $entry['child'] = [];
         }
-        $found = _chmosaicotempate_civix_insert_navigation_menu($entry['child'], implode('/', $path), $item);
+        $found = _chmosaicotemplate_civix_insert_navigation_menu($entry['child'], implode('/', $path), $item);
       }
     }
     return $found;
@@ -411,9 +411,9 @@ function _chmosaicotempate_civix_insert_navigation_menu(&$menu, $path, $item) {
 /**
  * (Delegated) Implements hook_civicrm_navigationMenu().
  */
-function _chmosaicotempate_civix_navigationMenu(&$nodes) {
+function _chmosaicotemplate_civix_navigationMenu(&$nodes) {
   if (!is_callable(['CRM_Core_BAO_Navigation', 'fixNavigationMenu'])) {
-    _chmosaicotempate_civix_fixNavigationMenu($nodes);
+    _chmosaicotemplate_civix_fixNavigationMenu($nodes);
   }
 }
 
@@ -421,17 +421,17 @@ function _chmosaicotempate_civix_navigationMenu(&$nodes) {
  * Given a navigation menu, generate navIDs for any items which are
  * missing them.
  */
-function _chmosaicotempate_civix_fixNavigationMenu(&$nodes) {
+function _chmosaicotemplate_civix_fixNavigationMenu(&$nodes) {
   $maxNavID = 1;
   array_walk_recursive($nodes, function($item, $key) use (&$maxNavID) {
     if ($key === 'navID') {
       $maxNavID = max($maxNavID, $item);
     }
   });
-  _chmosaicotempate_civix_fixNavigationMenuItems($nodes, $maxNavID, NULL);
+  _chmosaicotemplate_civix_fixNavigationMenuItems($nodes, $maxNavID, NULL);
 }
 
-function _chmosaicotempate_civix_fixNavigationMenuItems(&$nodes, &$maxNavID, $parentID) {
+function _chmosaicotemplate_civix_fixNavigationMenuItems(&$nodes, &$maxNavID, $parentID) {
   $origKeys = array_keys($nodes);
   foreach ($origKeys as $origKey) {
     if (!isset($nodes[$origKey]['attributes']['parentID']) && $parentID !== NULL) {
@@ -446,7 +446,7 @@ function _chmosaicotempate_civix_fixNavigationMenuItems(&$nodes, &$maxNavID, $pa
       $origKey = $newKey;
     }
     if (isset($nodes[$origKey]['child']) && is_array($nodes[$origKey]['child'])) {
-      _chmosaicotempate_civix_fixNavigationMenuItems($nodes[$origKey]['child'], $maxNavID, $nodes[$origKey]['attributes']['navID']);
+      _chmosaicotemplate_civix_fixNavigationMenuItems($nodes[$origKey]['child'], $maxNavID, $nodes[$origKey]['attributes']['navID']);
     }
   }
 }
@@ -456,7 +456,7 @@ function _chmosaicotempate_civix_fixNavigationMenuItems(&$nodes, &$maxNavID, $pa
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_alterSettingsFolders
  */
-function _chmosaicotempate_civix_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
+function _chmosaicotemplate_civix_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
   $settingsDir = __DIR__ . DIRECTORY_SEPARATOR . 'settings';
   if (!in_array($settingsDir, $metaDataFolders) && is_dir($settingsDir)) {
     $metaDataFolders[] = $settingsDir;
@@ -471,7 +471,7 @@ function _chmosaicotempate_civix_civicrm_alterSettingsFolders(&$metaDataFolders 
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_entityTypes
  */
 
-function _chmosaicotempate_civix_civicrm_entityTypes(&$entityTypes) {
+function _chmosaicotemplate_civix_civicrm_entityTypes(&$entityTypes) {
   $entityTypes = array_merge($entityTypes, array (
   ));
 }
