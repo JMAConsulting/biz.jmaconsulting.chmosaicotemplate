@@ -155,6 +155,12 @@ function chmosaicotemplate_civicrm_mosaicoBaseTemplates(&$templates) {
   );
 }
 
+function chmosaicotemplate_civicrm_apiWrappers(&$wrappers, $apiRequest) {
+  if ($apiRequest['entity'] == 'MosaicoTemplate' && $apiRequest['action'] == 'get') {
+    $wrappers[] = new CRM_Chmosaicotemplate_TemplateWrapper();
+  }
+}
+
 // --- Functions below this ship commented out. Uncomment as required. ---
 
 /**
