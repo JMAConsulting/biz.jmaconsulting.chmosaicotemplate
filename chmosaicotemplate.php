@@ -6,7 +6,7 @@ use CRM_Chmosaicotemplate_ExtensionUtil as E;
 /**
  * Implements hook_civicrm_config().
  *
- * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_config/ 
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_config/
  */
 function chmosaicotemplate_civicrm_config(&$config) {
   _chmosaicotemplate_civix_civicrm_config($config);
@@ -153,6 +153,19 @@ function chmosaicotemplate_civicrm_mosaicoBaseTemplates(&$templates) {
     'path' => E::url('chtemplate/chtemplate.html'),
     'thumbnail' => E::url('chtemplate/edres/_full.png'),
   );
+}
+
+function chmosaicotemplate_civicrm_buildForm($formName, &$form) {
+  if ('CRM_Contribute_Form_Task_PDFLetter' == $formName) {
+    unset($form->_elements[$form->_elementIndex['document_file']], $form->_elements[$form->_duplicateIndex['document_file'][0]]);
+    unset($form->_elementIndex['document_file'], $form->_duplicateIndex['document_file']);
+
+    CRM_Core_Resources::singleton()->addScript(
+      "CRM.$(function($) {
+        $('#template').parent().html($('#template').parent().html().replace('OR', ''));
+      });"
+    );
+  }
 }
 
 function chmosaicotemplate_civicrm_apiWrappers(&$wrappers, $apiRequest) {
