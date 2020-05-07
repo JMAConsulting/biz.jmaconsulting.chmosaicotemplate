@@ -56,13 +56,9 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
   }
 
   /**
-   * Example: Run a couple simple queries.
-   *
-   * @return TRUE on success
-   * @throws Exception
+   * Perform Cleanup routine
    */
-  public function upgrade_4200() {
-    $this->ctx->log->info('Applying update 4200');
+  public function cleanupDatabaseTemplates() {
     civicrm_api3('Extension', 'disable', ['key' => 'org.civicrm.mosaicomsgtpl']);
     $messageTemplates = civicrm_api3('MessageTemplate', 'get', [
       'is_reserved' => 1,
@@ -88,6 +84,21 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
       'id' => $thankYouTemplate['id'],
       'msg_html' => $msg_html,
     ]);
+    $mosaicoThankYou = civicrm_api3('MosaicoTemplate', 'get', ['title' => 'Basic Thank You Email']);
+    if (!empty($mosaicoThankYou['values'])) {
+      civicrm_api3('MosaicoTemplate', 'delete', ['id' => $mosaicoThankYou['id']]);
+    }
+  }
+
+  /**
+   * Example: Run a couple simple queries.
+   *
+   * @return TRUE on success
+   * @throws Exception
+   */
+  public function upgrade_4200() {
+    $this->ctx->log->info('Applying update 4200');
+    $this->cleanupDatabaseTemplates();
     return TRUE;
   }
 
