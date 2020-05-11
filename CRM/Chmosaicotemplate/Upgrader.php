@@ -83,6 +83,7 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
     civicrm_api3('MessageTemplate', 'create', [
       'id' => $thankYouTemplate['id'],
       'msg_html' => $msg_html,
+      'is_reserved' => 0,
     ]);
     $mosaicoThankYou = civicrm_api3('MosaicoTemplate', 'get', ['title' => 'Basic Thank You Email']);
     if (!empty($mosaicoThankYou['values'])) {
