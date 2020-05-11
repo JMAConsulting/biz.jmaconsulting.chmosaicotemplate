@@ -102,32 +102,32 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
  */
 CKEDITOR.editorConfig = function( config ) {
         config.toolbarGroups = [
-                { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
-                { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
-                { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
-                { name: 'forms', groups: [ 'forms' ] },
-                '/',
-                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-                { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
-                { name: 'links', groups: [ 'links' ] },
-                { name: 'insert', groups: [ 'insert' ] },
-                '/',
-                { name: 'styles', groups: [ 'styles' ] },
-                { name: 'colors', groups: [ 'colors' ] },
-                { name: 'tools', groups: [ 'tools' ] },
-                { name: 'others', groups: [ 'others' ] },
-                { name: 'about', groups: [ 'about' ] }
+                { name: \'document\', groups: [ \'mode\', \'document\', \'doctools\' ] },
+                { name: \'clipboard\', groups: [ \'clipboard\', \'undo\' ] },
+                { name: \'editing\', groups: [ \'find\', \'selection\', \'spellchecker\', \'editing\' ] },
+                { name: \'forms\', groups: [ \'forms\' ] },
+                \'/\',
+                { name: \'basicstyles\', groups: [ \'basicstyles\', \'cleanup\' ] },
+                { name: \'paragraph\', groups: [ \'list\', \'indent\', \'blocks\', \'align\', \'bidi\', \'paragraph\' ] },
+                { name: \'links\', groups: [ \'links\' ] },
+                { name: \'insert\', groups: [ \'insert\' ] },
+                \'/\',
+                { name: \'styles\', groups: [ \'styles\' ] },
+                { name: \'colors\', groups: [ \'colors\' ] },
+                { name: \'tools\', groups: [ \'tools\' ] },
+                { name: \'others\', groups: [ \'others\' ] },
+                { name: \'about\', groups: [ \'about\' ] }
         ];
 
         config.skin = "moono";
 
         config.allowedContent = true;
 
-        config.image_previewText = "''";
+        config.image_previewText = "\'\'";
 };';
     $content = str_replace('%%date%%', date('Y-m-d H:i:s'), $content);
     $content = str_replace('%%domain%%', $config->userFrameworkBaseURL, $content);
-    CRM_Admin_Page_CKEditor::saveConfigFile('default', $content);
+    CRM_Admin_Page_CKEditorConfig::saveConfigFile('default', $content);
   }
 
   /**
