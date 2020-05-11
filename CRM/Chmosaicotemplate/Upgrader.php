@@ -67,7 +67,7 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
       'options' => ['limit' => 0],
     ]);
     if (!empty($messageTemplates['values'])) {
-      foreach ($messageTemplates as $template) {
+      foreach ($messageTemplates['values'] as $template) {
         try {
           civicrm_api3('MessageTemplate', 'delete', ['id' => $template['id']]);
         }
@@ -96,8 +96,8 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
    * @return TRUE on success
    * @throws Exception
    */
-  public function upgrade_4200() {
-    $this->ctx->log->info('Applying update 4200');
+  public function upgrade_1200() {
+    $this->ctx->log->info('Applying update 1200');
     $this->cleanupDatabaseTemplates();
     return TRUE;
   }
