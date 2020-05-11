@@ -37,8 +37,9 @@ function chmosaicotemplate_civicrm_install() {
  */
 function chmosaicotemplate_civicrm_postInstall() {
   _chmosaicotemplate_civix_civicrm_postInstall();
-  $upgrade = new CRM_Chmosaicotemplate_Upgrader();
+  $upgrade = new CRM_Chmosaicotemplate_Upgrader(E::LONG_NAME, __DIR__ . DIRECTORY_SEPARATOR);
   $upgrade->cleanupDatabaseTemplates();
+  $upgrade->setCKEditorConfig();
 }
 
 /**
