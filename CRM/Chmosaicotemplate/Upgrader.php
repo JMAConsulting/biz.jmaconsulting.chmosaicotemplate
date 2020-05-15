@@ -76,6 +76,21 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
         }
       }
     }
+    $copyOfThankYou = civicrm_api3('MessageTemplate', 'get', [
+      'msg_title' => 'Copy of Basic - Thank You Email',
+      'is_reserved' => 1,
+      'workflow_id' => ['IS NULL' => 1],
+    ]);
+    if (!empty($copyOfThankYou['values'])) {
+      foreach ($copyOfThankYou['values'] as $template) {
+        try {
+          civicrm_api3('MessageTemplate', 'delete', ['id' => $template['id']]);
+        }
+        catch (Exception $e) {
+          \Civi::log()->debug('Unable to delete MessageTemplate ID', ['id' => $template['id']]);
+        }
+      }
+    }
     $thankYouTemplate = civicrm_api3('MessageTemplate', 'get', [
       'msg_title' => 'Basic - Thank You Email',
     ]);
@@ -85,7 +100,7 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
       'msg_html' => $msg_html,
       'is_reserved' => 0,
     ]);
-    $mosaicoThankYou = civicrm_api3('MosaicoTemplate', 'get', ['title' => 'Basic Thank You Email']);
+    $mosaicoThankYou = civicrm_api3('MosaicoTemplate', 'get', ['title' => 'Basic - Thank You Email']);
     if (!empty($mosaicoThankYou['values'])) {
       civicrm_api3('MosaicoTemplate', 'delete', ['id' => $mosaicoThankYou['id']]);
     }
