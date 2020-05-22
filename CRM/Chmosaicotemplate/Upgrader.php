@@ -118,6 +118,24 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
     return TRUE;
   }
 
+  public function upgrade_1201() {
+    $this->ctx->log->info('Applying update 1201: Fix tokens used in the basic thank you email template');
+    $this->fixUpBasicThankYouTemplate();
+    return TRUE;
+  }
+
+  public function fixUpBasicThankYouTemplate() {
+    $thankYouTemplate = civicrm_api3('MessageTemplate', 'get', [
+      'msg_title' => 'Basic - Thank You Email',
+    ]);
+    $msg_html = file_get_contents(__DIR__ . '/thank_you_email_fixed_content.html');
+    civicrm_api3('MessageTemplate', 'create', [
+      'id' => $thankYouTemplate['id'],
+      'msg_html' => $msg_html,
+      'is_reserved' => 0,
+    ]);
+  }
+
 
   /**
    * Example: Run an external SQL script.
