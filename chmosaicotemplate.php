@@ -39,6 +39,8 @@ function chmosaicotemplate_civicrm_postInstall() {
   _chmosaicotemplate_civix_civicrm_postInstall();
   $upgrade = new CRM_Chmosaicotemplate_Upgrader(E::LONG_NAME, realpath(__DIR__ . '/'));
   $upgrade->cleanupDatabaseTemplates();
+  // Ensure the latest standard template is used.
+  $upgrade->fixUpBasicThankYouTemplate();
 }
 
 /**
