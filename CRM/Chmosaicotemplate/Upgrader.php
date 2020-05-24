@@ -124,6 +124,12 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
     return TRUE;
   }
 
+  public function upgrade_1202() {
+    $this->ctx->log->info('Applying update 1202: Update to Joe\'s fixed version of the template');
+    $this->fixUpBasicThankYouTemplate();
+    return TRUE;
+  }
+
   public function fixUpBasicThankYouTemplate() {
     $thankYouTemplate = civicrm_api3('MessageTemplate', 'get', [
       'msg_title' => 'Basic - Thank You Email',
