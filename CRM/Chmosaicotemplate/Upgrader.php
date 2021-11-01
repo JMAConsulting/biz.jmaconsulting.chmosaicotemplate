@@ -159,7 +159,7 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
     
   }
    return TRUE;
-}
+  }
 
   public function fixUpBasicThankYouTemplate() {
     $thankYouTemplate = civicrm_api3('MessageTemplate', 'get', [
