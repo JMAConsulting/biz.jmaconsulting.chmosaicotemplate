@@ -146,7 +146,6 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
       ]
     ];
     foreach($whereClauses as $whereClause) {
-     
      $queryValue = CRM_Core_DAO::executeQuery(sprintf("SELECT metadata, id from `civicrm_mosaico_template` WHERE %s ", $whereClause['searchClause']));
      while($queryValue->fetch())
      {
@@ -154,10 +153,8 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
        $metavalue_array['template'] = str_replace($whereClause['searchString'], $whereClause['replaceString'], $metavalue_array['template']);
        $updated_metavalue = json_encode($metavalue_array);
        CRM_Core_DAO::executeQuery(sprintf("UPDATE civicrm_mosaico_template SET metadata = '%s' WHERE id = %s ", $updated_metavalue, $queryValue->id));
-      
+      }
     }
-    
-  }
    return TRUE;
   }
 
