@@ -167,13 +167,12 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
     if (!empty($thankYouTemplate['values'])) {
       foreach ($thankYouTemplate['values'] as $templateContent) {
         $updatedMsgHtml = str_replace("{contact.first_name} {contact.last_name}", "{contact.display_name} ", $templateContent['msg_html'], $replaceCount);
-            if($replaceCount>0){      
-              civicrm_api3('MessageTemplate', 'create', 
-                    [
-                      'msg_html' => $updatedMsgHtml,
-                      'id' => $templateContent['id'],
-                    ]);
-            }
+        if($replaceCount>0){      
+          civicrm_api3('MessageTemplate', 'create', [
+            'msg_html' => $updatedMsgHtml,
+            'id' => $templateContent['id'],
+          ]);
+        }
       }
     }
    return TRUE;
