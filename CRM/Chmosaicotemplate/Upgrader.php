@@ -158,6 +158,26 @@ class CRM_Chmosaicotemplate_Upgrader extends CRM_Chmosaicotemplate_Upgrader_Base
    return TRUE;
   }
 
+  public function upgrade_1204() {
+    $this->ctx->log->info('CRM-1069: DMS - Default “Basic Thank You” E-mail Templates not populating “Contact First or Last Name” for Organizations & Households');
+    $thankYouTemplate = civicrm_api3('MessageTemplate', 'get', [
+      'msg_title' => 'Basic - Thank You Email',
+    ]);
+    //Replacing (contact.first_name) (contact.last_name) token with (contact.display_name) for "Basic - Thank You Email" message template 
+    if (!empty($thankYouTemplate['values'])) {
+      foreach ($thankYouTemplate['values'] as $templateContent) {
+        $updatedMsgHtml = str_replace("{contact.first_name} {contact.last_name}", "{contact.display_name} ", $templateContent['msg_html'], $replaceCount);
+        if($replaceCount>0){      
+          civicrm_api3('MessageTemplate', 'create', [
+            'msg_html' => $updatedMsgHtml,
+            'id' => $templateContent['id'],
+          ]);
+        }
+      }
+    }
+   return TRUE;
+  }
+
   public function fixUpBasicThankYouTemplate() {
     $thankYouTemplate = civicrm_api3('MessageTemplate', 'get', [
       'msg_title' => 'Basic - Thank You Email',
